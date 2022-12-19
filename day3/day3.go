@@ -60,7 +60,22 @@ func main() {
 			break
 		}
 
-		totalScore += processLine(line)
+		if false {
+			// part 1
+			totalScore += processLine(line)
+		} else {
+			// part 2
+			scanner.Scan()
+			line1 := scanner.Text()
+
+			scanner.Scan()
+			line2 := scanner.Text()
+
+			dup01 := duplicateLetters(line, line1)
+			dup012 := duplicateLetters(dup01, line2)
+
+			totalScore += score(dup012[0])
+		}
 	}
 
 	fmt.Println("Total score: ", totalScore)
